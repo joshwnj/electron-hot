@@ -1,8 +1,5 @@
-var app = require('app');
-var BrowserWindow = require('browser-window');
+var { app, BrowserWindow } = require('electron');
 var path = require('path');
-
-require('crash-reporter').start();
 
 require('..')();
 
@@ -17,7 +14,7 @@ app.on('ready', function() {
     width: 800,
     height: 600
   });
-  mainWindow.loadUrl('file://' + path.join(__dirname, '/index.html'));
+  mainWindow.loadURL('file://' + path.join(__dirname, 'index.html'));
   mainWindow.on('close', function() {
     mainWindow = null;
   });
